@@ -37,6 +37,14 @@
         }
       },
       {
+        "match": {
+          "uri": "/static/*"
+        },
+        "action": {
+          "share": "/srv/webapps/pureryzen.io$uri"
+        }
+      },
+      {
         "action": {
           "share": "/srv/webapps/pureryzen.io/hellow$uri"
         }
