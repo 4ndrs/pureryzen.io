@@ -1,0 +1,55 @@
+{
+  "listeners": {
+    "*:443": {
+      "pass": "routes/main",
+      "tls": {
+        "certificate": "bundle"
+      }
+    },
+
+    "*:80": {
+      "pass": "routes/redirect"
+    }
+  },
+
+  "applications": {
+    "PureRyzen": {
+      "type": "python 3.10",
+      "path": "/srv/webapps/pureryzen.io/",
+      "home": "/srv/webapps/pureryzen.io/env/",
+      "module": "pureryzen.asgi",
+      "user": "webapps",
+      "group": "webapps",
+      "environment": {
+        "DJANGO_SETTINGS_MODULE": "pureryzen.settings"
+      }
+    }
+  },
+
+  "routes": {
+    "main": [
+      {
+        "match": {
+          "uri": "/api"
+        },
+        "action": {
+          "pass": "applications/PureRyzen"
+        }
+      },
+      {
+        "action": {
+          "share": "/srv/webapps/pureryzen.io/hellow$uri"
+        }
+      }
+    ],
+
+    "redirect": [
+      {
+        "action": {
+          "return": 301,
+          "location": "https://pureryzen.io"
+        }
+      }
+    ]
+  }
+}
