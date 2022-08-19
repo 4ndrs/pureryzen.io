@@ -16,4 +16,6 @@ To restart the application processes:
 # curl -X GET --unix-socket /run/nginx-unit.sock http://localhost/control/applications/PureRyzen/restart
 ```
 
-<kbd>![1660808374128211](https://user-images.githubusercontent.com/31898900/185345019-85a74ed8-fd3e-488e-abee-7025586ff61a.png)</kbd>
+<kbd>![screen](https://user-images.githubusercontent.com/31898900/185584714-875b888c-0df9-4252-a435-84dc6a0166e2.gif)</kbd>
+
+<kbd>![1660900116106024](https://user-images.githubusercontent.com/31898900/185586210-f586ff4b-2023-4ec7-871c-04facc74b965.png)</kbd>
