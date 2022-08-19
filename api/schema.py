@@ -6,7 +6,16 @@ import graphene
 
 
 class Query(graphene.ObjectType):
-    hello = graphene.String(default_value="Hi!")
+    hellow = graphene.String(msg=graphene.String())
+
+    def resolve_hellow(root, info, msg):
+        match msg.lower():
+            case "hello world":
+                return "Hola Mundo"
+            case "hola mundo":
+                return "Ciao Mondo"
+            case _:
+                return "Hello World"
 
 
 schema = graphene.Schema(query=Query)
