@@ -30,14 +30,6 @@
     "main": [
       {
         "match": {
-          "uri": "/api"
-        },
-        "action": {
-          "pass": "applications/PureRyzen"
-        }
-      },
-      {
-        "match": {
           "uri": "/static/*"
         },
         "action": {
@@ -46,7 +38,7 @@
       },
       {
         "action": {
-          "share": "/srv/webapps/pureryzen.io/hellow$uri"
+          "pass": "applications/PureRyzen"
         }
       }
     ],
