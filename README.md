@@ -6,16 +6,30 @@ PureRyzen is the hostname of the Linux box running the NGINX Unit application se
 
 ## Configuration
 
-To apply the configuration to the application server:
+The server uses TLS, create a bundle.pem with the cerficates, and push it to the server:
+```console
+$ cat cert.pem ca.pem key.pem > bundle.pem
+```
+```console
+# curl -X PUT --data-binary @bundle.pem \
+              --unix-socket /run/nginx-unit.sock http://localhost/certificates/bundle
+```
+
+After that, the configuration can be applied with the following:
 ```console
 # curl -X PUT --data-binary @config.json \
               --unix-socket /run/nginx-unit.sock http://localhost/config/
 ```
 
-To restart the application processes:
+To apply changes after adding modifications to Django Apps, restart the application processes:
 ```console
 # curl -X GET --unix-socket /run/nginx-unit.sock \
               http://localhost/control/applications/PureRyzen/restart
+```
+
+Django Apps' static files need to be generated:
+```console
+$ ./manage.py collectstatic
 ```
 
 ## Screenshots
