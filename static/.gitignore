@@ -1,0 +1,6 @@
+# Ignore everything here except for favicon.ico and .gitignore
+# App's static files need to be generated with ./manage.py collectstatic
+/*
+
+!favicon.ico
+!.gitignore
