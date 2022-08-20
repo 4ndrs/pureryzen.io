@@ -1,8 +1,13 @@
-# PureRyzen.io
+<p align='center'>
+  <img height=120 src='https://github.com/4ndrs/pureryzen.io/raw/main/static/favicon.ico' />
+</p>
+<h1 align='center'> PureRyzen.io</h1>
 
-Web App using Python as backend.
+<p align='center'>
+  Web App using Python as backend.
 
-PureRyzen is the hostname of the Linux box running the NGINX Unit application server. The box is running on an AMD Ryzen CPU (a Ryzen 7 3700X to be more specific), that is where the name originally came from. The domain name does not exist outside of my local network.
+  PureRyzen is the hostname of the Linux box running the NGINX Unit application server. The box is running on an AMD Ryzen CPU (a Ryzen 7 3700X to be more specific), that is where the name originally came from. The domain name does not exist outside of my local network.
+</p>
 
 ## Configuration
 
